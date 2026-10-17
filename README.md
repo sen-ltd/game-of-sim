@@ -153,3 +153,10 @@ npm run literature # rebuild src/results.json from runs/
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/game-of-sim/
+- 📝 記事: https://qiita.com/sen-ltd/items/79043966174317cd1645
+<!-- /sen-publish:links -->
