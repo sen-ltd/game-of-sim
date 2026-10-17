@@ -1,0 +1,419 @@
+{
+ "node": "v26.3.0",
+ "small": [
+  {
+   "n": 3,
+   "positions": 13,
+   "outcome": "draw",
+   "plies": 3,
+   "ms": 0
+  },
+  {
+   "n": 4,
+   "positions": 247,
+   "outcome": "draw",
+   "plies": 6,
+   "ms": 1
+  },
+  {
+   "n": 5,
+   "positions": 11793,
+   "outcome": "draw",
+   "plies": 10,
+   "ms": 4
+  },
+  {
+   "n": 6,
+   "positions": 1350022,
+   "outcome": "first player loses",
+   "plies": 15,
+   "ms": 655
+  }
+ ],
+ "solveMs": 491,
+ "levels": [
+  {
+   "ply": 0,
+   "labelled": 1,
+   "classes": 1,
+   "terminalLabelled": 0,
+   "terminalClasses": 0
+  },
+  {
+   "ply": 1,
+   "labelled": 15,
+   "classes": 1,
+   "terminalLabelled": 0,
+   "terminalClasses": 0
+  },
+  {
+   "ply": 2,
+   "labelled": 210,
+   "classes": 2,
+   "terminalLabelled": 0,
+   "terminalClasses": 0
+  },
+  {
+   "ply": 3,
+   "labelled": 1365,
+   "classes": 7,
+   "terminalLabelled": 0,
+   "terminalClasses": 0
+  },
+  {
+   "ply": 4,
+   "labelled": 8190,
+   "classes": 25,
+   "terminalLabelled": 0,
+   "terminalClasses": 0
+  },
+  {
+   "ply": 5,
+   "labelled": 28710,
+   "classes": 64,
+   "terminalLabelled": 1320,
+   "terminalClasses": 6
+  },
+  {
+   "ply": 6,
+   "labelled": 91500,
+   "classes": 166,
+   "terminalLabelled": 4200,
+   "terminalClasses": 13
+  },
+  {
+   "ply": 7,
+   "labelled": 177525,
+   "classes": 303,
+   "terminalLabelled": 37800,
+   "terminalClasses": 70
+  },
+  {
+   "ply": 8,
+   "labelled": 306450,
+   "classes": 500,
+   "terminalLabelled": 64800,
+   "terminalClasses": 117
+  },
+  {
+   "ply": 9,
+   "labelled": 308070,
+   "classes": 489,
+   "terminalLabelled": 211680,
+   "terminalClasses": 352
+  },
+  {
+   "ply": 10,
+   "labelled": 266346,
+   "classes": 415,
+   "terminalLabelled": 180450,
+   "terminalClasses": 299
+  },
+  {
+   "ply": 11,
+   "labelled": 117000,
+   "classes": 193,
+   "terminalLabelled": 246690,
+   "terminalClasses": 386
+  },
+  {
+   "ply": 12,
+   "labelled": 39960,
+   "classes": 71,
+   "terminalLabelled": 87840,
+   "terminalClasses": 150
+  },
+  {
+   "ply": 13,
+   "labelled": 4500,
+   "classes": 12,
+   "terminalLabelled": 41940,
+   "terminalClasses": 75
+  },
+  {
+   "ply": 14,
+   "labelled": 180,
+   "classes": 1,
+   "terminalLabelled": 3780,
+   "terminalClasses": 10
+  },
+  {
+   "ply": 15,
+   "labelled": 0,
+   "classes": 0,
+   "terminalLabelled": 180,
+   "terminalClasses": 1
+  }
+ ],
+ "levelMs": 379,
+ "burnside": {
+  "classes": 2250,
+  "ms": 33077
+ },
+ "blueReplies": [
+  {
+   "edge": "13",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "14",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "15",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "16",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "23",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "24",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "25",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "26",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "34",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "35",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "36",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "45",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "46",
+   "outcome": 2,
+   "depth": 14
+  },
+  {
+   "edge": "56",
+   "outcome": 2,
+   "depth": 14
+  }
+ ],
+ "mustCloseLabelled": 21054,
+ "strategy": [
+  {
+   "name": "all three rules on the mini-board",
+   "wins": true,
+   "decisions": 182145,
+   "decisionClasses": 304,
+   "byRule1": 6,
+   "byRule2": 82,
+   "byRule3": 83,
+   "leftOver": 133,
+   "admitsLosing": 0,
+   "severalBoards": 2,
+   "nonIsomorphicBoards": 0,
+   "firstBlunder": null,
+   "stuck": 0,
+   "longest": 15,
+   "ms": 11690
+  },
+  {
+   "name": "rules 1 and 2 (no rule 3)",
+   "wins": false,
+   "decisions": 486075,
+   "decisionClasses": 775,
+   "byRule1": 37,
+   "byRule2": 135,
+   "byRule3": 0,
+   "leftOver": 594,
+   "admitsLosing": 385,
+   "severalBoards": 2,
+   "nonIsomorphicBoards": 0,
+   "firstBlunder": {
+    "red": [
+     "14",
+     "23"
+    ],
+    "blue": [
+     "15"
+    ],
+    "allowed": [
+     "12",
+     "13",
+     "24",
+     "34",
+     "45"
+    ],
+    "losing": [
+     "12",
+     "13"
+    ],
+    "redWinsIn": 10
+   },
+   "stuck": 9,
+   "longest": -1,
+   "ms": 52514
+  },
+  {
+   "name": "rules 1 and 3 (no rule 2)",
+   "wins": false,
+   "decisions": 393435,
+   "decisionClasses": 637,
+   "byRule1": 30,
+   "byRule2": 0,
+   "byRule3": 232,
+   "leftOver": 362,
+   "admitsLosing": 225,
+   "severalBoards": 3,
+   "nonIsomorphicBoards": 0,
+   "firstBlunder": {
+    "red": [
+     "12",
+     "13"
+    ],
+    "blue": [
+     "23"
+    ],
+    "allowed": [
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "losing": [
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "redWinsIn": 10
+   },
+   "stuck": 13,
+   "longest": -1,
+   "ms": 36574
+  },
+  {
+   "name": "rule 1 only",
+   "wins": false,
+   "decisions": 621885,
+   "decisionClasses": 1026,
+   "byRule1": 48,
+   "byRule2": 0,
+   "byRule3": 0,
+   "leftOver": 959,
+   "admitsLosing": 809,
+   "severalBoards": 3,
+   "nonIsomorphicBoards": 0,
+   "firstBlunder": {
+    "red": [
+     "12",
+     "13"
+    ],
+    "blue": [
+     "23"
+    ],
+    "allowed": [
+     "14",
+     "15",
+     "16",
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "losing": [
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "redWinsIn": 10
+   },
+   "stuck": 19,
+   "longest": -1,
+   "ms": 89616
+  },
+  {
+   "name": "all three rules on the whole K6",
+   "wins": false,
+   "decisions": 366195,
+   "decisionClasses": 588,
+   "byRule1": 14,
+   "byRule2": 101,
+   "byRule3": 198,
+   "leftOver": 266,
+   "admitsLosing": 102,
+   "severalBoards": 0,
+   "nonIsomorphicBoards": 0,
+   "firstBlunder": {
+    "red": [
+     "12",
+     "13"
+    ],
+    "blue": [
+     "23"
+    ],
+    "allowed": [
+     "45",
+     "46",
+     "56"
+    ],
+    "losing": [
+     "45",
+     "46",
+     "56"
+    ],
+    "redWinsIn": 10
+   },
+   "stuck": 9,
+   "longest": -1,
+   "ms": 22960
+  }
+ ],
+ "trap": {
+  "random": 0.8902973832295159,
+  "slany-count": 0.9969233860596706,
+  "slany-share": 0.9969380832965903,
+  "optimal": 0.9984777336860674,
+  "randomVsRandom": 0.5031403859542731
+ },
+ "simPlus": {
+  "triangleFreeClasses": 6617,
+  "redEmptyClasses": 38,
+  "blueEmptyClasses": 38,
+  "reachableStates": 13122,
+  "bothSidesToMove": 13234
+ }
+}

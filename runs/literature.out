@@ -1,0 +1,42 @@
+✓ The second player wins Sim
+    yes: the empty board is a loss for Red in 15 moves
+✓ The second player cannot force a win before move 15
+    yes: Red can always survive until it has to colour the last line
+✓ 3,728 non-isomorphic legal positions, counting those with a monochromatic triangle
+    yes, if the empty board is left out: 2,249 triangle-free + 1,479 finished
+✗ 2,309 of them without a monochromatic triangle
+    no: 2,250 with the empty board (level-by-level canonical forms and a Burnside count agree)
+✗ Sim+ (several lines per move) has a 13,158-entry game graph
+    not reproduced: 6,617 triangle-free colourings; 13,122 (colouring, side to move) states reachable with Red starting, 13,234 with either side
+✓ Partial colourings of K18 with r = g or r = g + 1, up to isomorphism: 122817954504260150325481627994395745196940238595512818831
+    identical, 4396 ms in BigInt
+✓ |K18(77,76)| = 114722035311851620271616102401
+    identical
+✓ About 2×10^54 legal positions of the K4 game on K18 (Monte Carlo)
+    yes: 1.959×10^54, 99% interval ±7.238×10^51 (1,000,000 samples per class)
+✓ The three rules win for the second player
+    yes, against every Red play: 304 position classes, longest game 15
+✓ If several moves are left after the rules, any of them wins
+    yes: 133 classes leave a choice, none of them a losing move
+✓ The mini-board is unique up to isomorphism
+    yes: 2 classes have more than one, always related by a symmetry of the position
+✓ Figure 1: {15, 35, 45} is the only maximum blue-safe set on the mini-board
+    yes (the hidden "Fix this caption" note in the TeX source notwithstanding)
+{
+  random: 0.8902973832295159,
+  slanyCount: 0.9969233860596706,
+  slanyShare: 0.9969380832965903,
+  optimal: 0.9984777336860674,
+  randomVsRandom: 0.5031403859542731
+} {
+  estimate: 1.9591929579567134e+54,
+  sd: 2.8099751046893666e+51,
+  zeroBound: 3.382986578247741e+47,
+  samples: 1000000,
+  ms: 246049
+}
+all three rules on the mini-board true 304 0 null
+rules 1 and 2 (no rule 3) false 775 385 {"red":["14","23"],"blue":["15"],"allowed":["12","13","24","34","45"],"losing":["12","13"],"redWinsIn":10}
+rules 1 and 3 (no rule 2) false 637 225 {"red":["12","13"],"blue":["23"],"allowed":["24","25","26","34","35","36"],"losing":["24","25","26","34","35","36"],"redWinsIn":10}
+rule 1 only false 1026 809 {"red":["12","13"],"blue":["23"],"allowed":["14","15","16","24","25","26","34","35","36"],"losing":["24","25","26","34","35","36"],"redWinsIn":10}
+all three rules on the whole K6 false 588 102 {"red":["12","13"],"blue":["23"],"allowed":["45","46","56"],"losing":["45","46","56"],"redWinsIn":10}

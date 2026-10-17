@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sim — the triangle game on K6 against a perfect player</title>
+    <meta
+      name="description"
+      content="Sim (Gustavus Simmons, 1969) in the browser against a perfect player: colour the edges of K6, whoever closes a triangle in their colour loses. The second player wins. Slany's 1999 position counts and Pólya numbers and Wrzos-Kaminska's 2020 three-rule strategy are re-checked one by one."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23151412'/%3E%3Cpath d='M16 5 L27 25 L5 25 Z' fill='none' stroke='%23ef5b6b' stroke-width='3'/%3E%3Cpath d='M5 25 L27 25' stroke='%235ea8f0' stroke-width='3'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Sim <span>the triangle game on K6</span></h1>
+        <p class="sub">
+          Six dots, fifteen lines. <strong class="r">Red</strong> and <strong class="b">Blue</strong> take turns
+          colouring one uncoloured line; whoever completes a <strong>triangle in their own colour loses</strong>.
+          Red moves first. Since R(3,3) = 6 the game can never be drawn, and with perfect play the
+          <strong>second player wins</strong> — always on the fifteenth move. The computer has solved all 1,350,022
+          positions; with hints on, each line is marked <strong class="win-t">W</strong> or
+          <strong class="lose-t">L</strong> with the moves left to the end.
+        </p>
+      </header>
+
+      <div id="wrap">
+        <div class="stage">
+          <div class="controls">
+            <label class="sel">you play
+              <select id="youSel">
+                <option value="red">Red (first)</option>
+                <option value="blue">Blue (second)</option>
+              </select>
+            </label>
+            <label class="sel">computer's Blue
+              <select id="blueSel">
+                <option value="perfect">perfect (solver)</option>
+                <option value="rules">2020 three rules</option>
+              </select>
+            </label>
+            <label class="sel chk"><input type="checkbox" id="hints" checked /> hints</label>
+            <button id="undo">Undo</button>
+            <button id="newgame" class="primary">New game</button>
+          </div>
+          <div id="boardwrap"><svg id="board" role="img" aria-label="Sim board: K6"></svg></div>
+          <div id="status" aria-live="polite"></div>
+          <div id="moves" class="fine"></div>
+        </div>
+        <div class="side">
+          <h3>the three rules, last blue move</h3>
+          <div class="panel" id="rules"></div>
+          <h3>solved</h3>
+          <div class="panel" id="solved"></div>
+          <h3>1999 and 2020 claims, re-checked</h3>
+          <div class="panel" id="checks"></div>
+        </div>
+      </div>
+
+      <section class="notes">
+        <h2>How the computer knows</h2>
+        <p>
+          A position is two 15-bit masks, the red lines and the blue lines; whose turn it is follows from the counts.
+          Every position reachable without a finished triangle gets one byte in a table indexed in base 3 (3<sup>15</sup>
+          ≈ 14 million cells): win or loss for the side to move and the moves left with perfect play. A plain
+          depth-first search fills it in about half a second — 1,350,022 positions. The empty board is a loss for Red
+          in 15: Blue can always win, but never before Red is forced to colour the last line.
+        </p>
+        <h2>The three rules</h2>
+        <p>
+          Weronika Wrzos-Kaminska (2020) gave Blue a strategy a person can follow: take the smallest complete
+          subgraph that holds every coloured line and at least one safe line for Blue (the <em>mini-board</em>);
+          (1) only consider Blue's safe lines on it; (2) keep the ones that lie in the most largest blue-safe sets of
+          lines on it; (3) of those, keep the ones in the most largest red-safe sets. Here every Red reply, every
+          mini-board and every tie was followed to the end: the rules never lose. Leave out any one of them and they
+          do.
+        </p>
+      </section>
+
+      <footer>
+        <p>
+          Built by <a href="https://sen.ltd/">SEN LLC</a>. TypeScript, no runtime dependencies. Sources:
+          W. Slany, <a href="https://arxiv.org/abs/cs/9911004">Graph Ramsey games</a> (1999);
+          W. Wrzos-Kaminska, <a href="https://arxiv.org/abs/2001.04024">A simpler winning strategy for Sim</a> (2020);
+          E. Mead, A. Rosa, C. Huang, <em>The game of Sim: a winning strategy for the second player</em>, Math. Mag. 47 (1974).
+          <a href="https://github.com/sen-ltd/game-of-sim">Source</a>.
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

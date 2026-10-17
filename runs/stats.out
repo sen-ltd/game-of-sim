@@ -1,0 +1,24 @@
+K3: 13 positions, {"outcome":1,"depth":3}, 0 ms
+K4: 247 positions, {"outcome":1,"depth":6}, 1 ms
+K5: 11793 positions, {"outcome":1,"depth":10}, 4 ms
+K6: 1350022 positions, {"outcome":0,"depth":15}, 655 ms
+levels 379 ms, Burnside 2250 classes 33077 ms
+all three rules on the mini-board: wins=true classes=304 admitsLosing=0 11690 ms
+rules 1 and 2 (no rule 3): wins=false classes=775 admitsLosing=385 52514 ms
+rules 1 and 3 (no rule 2): wins=false classes=637 admitsLosing=225 36574 ms
+rule 1 only: wins=false classes=1026 admitsLosing=809 89616 ms
+all three rules on the whole K6: wins=false classes=588 admitsLosing=102 22960 ms
+{
+  random: 0.8902973832295159,
+  'slany-count': 0.9969233860596706,
+  'slany-share': 0.9969380832965903,
+  optimal: 0.9984777336860674,
+  randomVsRandom: 0.5031403859542731
+}
+{
+  triangleFreeClasses: 6617,
+  redEmptyClasses: 38,
+  blueEmptyClasses: 38,
+  reachableStates: 13122,
+  bothSidesToMove: 13234
+}

@@ -1,0 +1,25 @@
+{
+  "name": "game-of-sim",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sim (Gustavus Simmons' triangle game on K6) against a perfect player, the 1999 and 2020 papers re-checked: Slany's position counts and Pólya numbers, and Wrzos-Kaminska's three-rule winning strategy for the second player, rule by rule. TypeScript, no runtime deps.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 4173",
+    "test": "vitest run",
+    "stats": "node tools/stats.mts",
+    "polya": "node tools/polya.mts",
+    "montecarlo": "node tools/montecarlo.mts",
+    "literature": "node tools/literature.mts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  },
+  "license": "MIT"
+}

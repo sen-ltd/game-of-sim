@@ -1,0 +1,245 @@
+{
+ "solved": [
+  {
+   "n": 3,
+   "positions": 13,
+   "outcome": "draw",
+   "plies": 3
+  },
+  {
+   "n": 4,
+   "positions": 247,
+   "outcome": "draw",
+   "plies": 6
+  },
+  {
+   "n": 5,
+   "positions": 11793,
+   "outcome": "draw",
+   "plies": 10
+  },
+  {
+   "n": 6,
+   "positions": 1350022,
+   "outcome": "first player loses",
+   "plies": 15
+  }
+ ],
+ "claims": [
+  {
+   "claim": "The second player wins Sim",
+   "source": "Mead, Rosa & Huang 1974; Slany 1999",
+   "result": "yes: the empty board is a loss for Red in 15 moves",
+   "ok": true
+  },
+  {
+   "claim": "The second player cannot force a win before move 15",
+   "source": "Slany 1999, \"Further observations\"",
+   "result": "yes: Red can always survive until it has to colour the last line",
+   "ok": true
+  },
+  {
+   "claim": "3,728 non-isomorphic legal positions, counting those with a monochromatic triangle",
+   "source": "Slany 1999, \"Strongly solving Sim\"",
+   "result": "yes, if the empty board is left out: 2,249 triangle-free + 1,479 finished",
+   "ok": true
+  },
+  {
+   "claim": "2,309 of them without a monochromatic triangle",
+   "source": "Slany 1999, \"Strongly solving Sim\"",
+   "result": "no: 2,250 with the empty board (level-by-level canonical forms and a Burnside count agree)",
+   "ok": false
+  },
+  {
+   "claim": "Sim+ (several lines per move) has a 13,158-entry game graph",
+   "source": "Slany 1999, \"Ultra-strongly solving Sim+\"",
+   "result": "not reproduced: 6,617 triangle-free colourings; 13,122 (colouring, side to move) states reachable with Red starting, 13,234 with either side",
+   "ok": false
+  },
+  {
+   "claim": "Partial colourings of K18 with r = g or r = g + 1, up to isomorphism: 122817954504260150325481627994395745196940238595512818831",
+   "source": "Slany 1999, \"Sim4 and above\", footnote",
+   "result": "identical, 4396 ms in BigInt",
+   "ok": true
+  },
+  {
+   "claim": "|K18(77,76)| = 114722035311851620271616102401",
+   "source": "Slany 1999, \"Further observations\"",
+   "result": "identical",
+   "ok": true
+  },
+  {
+   "claim": "About 2×10^54 legal positions of the K4 game on K18 (Monte Carlo)",
+   "source": "Slany 1999, \"Sim4 and above\"",
+   "result": "yes: 1.959×10^54, 99% interval ±7.238×10^51 (1,000,000 samples per class)",
+   "ok": true
+  },
+  {
+   "claim": "The three rules win for the second player",
+   "source": "Wrzos-Kaminska 2020",
+   "result": "yes, against every Red play: 304 position classes, longest game 15",
+   "ok": true
+  },
+  {
+   "claim": "If several moves are left after the rules, any of them wins",
+   "source": "Wrzos-Kaminska 2020",
+   "result": "yes: 133 classes leave a choice, none of them a losing move",
+   "ok": true
+  },
+  {
+   "claim": "The mini-board is unique up to isomorphism",
+   "source": "Wrzos-Kaminska 2020",
+   "result": "yes: 2 classes have more than one, always related by a symmetry of the position",
+   "ok": true
+  },
+  {
+   "claim": "Figure 1: {15, 35, 45} is the only maximum blue-safe set on the mini-board",
+   "source": "Wrzos-Kaminska 2020",
+   "result": "yes (the hidden \"Fix this caption\" note in the TeX source notwithstanding)",
+   "ok": true
+  }
+ ],
+ "strategy": [
+  {
+   "name": "all three rules on the mini-board",
+   "wins": true,
+   "classes": 304,
+   "admitsLosing": 0,
+   "firstBlunder": null
+  },
+  {
+   "name": "rules 1 and 2 (no rule 3)",
+   "wins": false,
+   "classes": 775,
+   "admitsLosing": 385,
+   "firstBlunder": {
+    "red": [
+     "14",
+     "23"
+    ],
+    "blue": [
+     "15"
+    ],
+    "allowed": [
+     "12",
+     "13",
+     "24",
+     "34",
+     "45"
+    ],
+    "losing": [
+     "12",
+     "13"
+    ],
+    "redWinsIn": 10
+   }
+  },
+  {
+   "name": "rules 1 and 3 (no rule 2)",
+   "wins": false,
+   "classes": 637,
+   "admitsLosing": 225,
+   "firstBlunder": {
+    "red": [
+     "12",
+     "13"
+    ],
+    "blue": [
+     "23"
+    ],
+    "allowed": [
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "losing": [
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "redWinsIn": 10
+   }
+  },
+  {
+   "name": "rule 1 only",
+   "wins": false,
+   "classes": 1026,
+   "admitsLosing": 809,
+   "firstBlunder": {
+    "red": [
+     "12",
+     "13"
+    ],
+    "blue": [
+     "23"
+    ],
+    "allowed": [
+     "14",
+     "15",
+     "16",
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "losing": [
+     "24",
+     "25",
+     "26",
+     "34",
+     "35",
+     "36"
+    ],
+    "redWinsIn": 10
+   }
+  },
+  {
+   "name": "all three rules on the whole K6",
+   "wins": false,
+   "classes": 588,
+   "admitsLosing": 102,
+   "firstBlunder": {
+    "red": [
+     "12",
+     "13"
+    ],
+    "blue": [
+     "23"
+    ],
+    "allowed": [
+     "45",
+     "46",
+     "56"
+    ],
+    "losing": [
+     "45",
+     "46",
+     "56"
+    ],
+    "redWinsIn": 10
+   }
+  }
+ ],
+ "trap": {
+  "random": 0.8902973832295159,
+  "slanyCount": 0.9969233860596706,
+  "slanyShare": 0.9969380832965903,
+  "optimal": 0.9984777336860674,
+  "randomVsRandom": 0.5031403859542731
+ },
+ "montecarlo": {
+  "estimate": 1.9591929579567134e+54,
+  "sd": 2.8099751046893666e+51,
+  "zeroBound": 3.382986578247741e+47,
+  "samples": 1000000,
+  "ms": 246049
+ }
+}
